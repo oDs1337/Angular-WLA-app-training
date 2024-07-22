@@ -6,7 +6,7 @@ The second screen is a ‘details’ page explaining the drink recipe. It includ
 **Note**: Develop this project in WLA (White-Label App) approach. A WLA drinks app which could be branded and configured by a config .json file. Think of this config .json object as an instruction which tells the app what/where/how to populate the UI elements. Think like you are developing a WL app template.
 
 # Design and Architecture
-There are no requirements as to what architecture you should choose. We recommend you choose the architecture you're most comfortable with. Also feel free to use your favorite open source libraries. Be creative with the design, you are free to decide how to create the UI and UX.
+Please use Angular as your project framework. Also feel free to use your favorite open source libraries. Be creative with the design, you are free to decide how to create the UI and UX.
 
 # Delivery
 In your fork, delete this content from the current README.md and instead document your project and explain how UI elements can be managed/altered through the Json object - this is also a good way to share thoughts on your design decisions and trade-offs you made.
