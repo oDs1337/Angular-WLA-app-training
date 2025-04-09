@@ -9,7 +9,7 @@ The second screen is a ‘details’ page explaining the drink recipe. It includ
 Please use Angular as your project framework. Also feel free to use your favorite open source libraries. Be creative with the design, you are free to decide how to create the UI and UX.
 
 # Delivery
-In your fork, delete this content from the current README.md and instead document your project and explain how UI elements can be managed/altered through the Json object - this is also a good way to share thoughts on your design decisions and trade-offs you made.
+In this fork, delete this content from the current README.md and instead document your project and explain how UI elements can be managed/altered through the Json object - this is also a good way to share thoughts on your design decisions and trade-offs you made.
 
 Additionally, deploy the final compiled version of the app to github pages and provide the URL to it.
 
