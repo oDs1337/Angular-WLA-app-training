@@ -1,59 +1,74 @@
-# EliqDrinksAppBaseTobiasz
+### Architecture:
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.4.
+I'm not a big fan of overengineering simple things since I've seen at my current project the consequences of making
+simple things more advanced than it's necessary.
 
-## Development server
+Frankly speaking I was thinking about using any architecture here besides standalone components
+since this application was very small and didn't really need any fancy architecture such as onion for example,
+however I understand that you need to check whether I know anything about building applications from scratch
+so I decided to use containers/presenters architecture which works perfectly fine for small/medium apps, especially
+with newer versions of Angular with fully standalone components. It was a propper choice for this application
+since my app contains list of cards and second screen with more information about specific drink of user's choice.
 
-To start a local development server, run:
+### Linters:
 
-```bash
-ng serve
-```
+It's always a good choice to install linters if the app is going to be used by more than 1 developer (but honestly
+I'd use it for one as well just for the sake of visibility) at the beginning when the project i fresh it's very
+easy to apply the config and make use of it from the beginning - it helps later on with standardization of code base
+and saves extra time on code reviews for both reviewer and owner of the pull request. If I'd have more time for this
+task I'd definitely think of adding stylelint and ESLint (must have!), packing it all up with Husky allows to keep
+repository fresh and clean = )
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+### API
 
-## Code scaffolding
+It was quite challenging to work with given API because it has broken a lot of good practices and standards as for
+public APIs such as prefixes with types, unclear naming for example strDrinkThumb suggest a thumbnail but in reality
+it's the entire URL address.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Pairing ingredients with measures was a nightmare and needed an API facade on the front-end which could hurt performance
+in bigger queries I'd suggest to change API's ingredients and measures to:
 
-```bash
-ng generate component component-name
-```
+"ingredients": [
+  { "name": "Vodka", "amount": "1", "unit": "shot""}
+]
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Instead of playing with Ingredient1... Measure1... :(
 
-```bash
-ng generate --help
-```
 
-## Building
+### WLA
 
-To build the project run:
+I've added simple WLA config which could be extended as business needs would increase because I've wrapped it up
+with a handy service that handles the file locally (it's being processed as observable so it's not a big issue
+to hold this file on the server later on) the service could be injected to any given component and change behaviour
+of the app, for example could change company's name, accessibility (I wasn't able to cover so many things in just
+3-4h given to this task) multiple languages support (on the toolbar dropdown), default language, logo url etc.
 
-```bash
-ng build
-```
+I've used new angular's pattern to add this config by using 'provideAppInitializer' with arrow function that's utilizing
+my service to catch the config with 'firstValueFrom' (like I've mentioned it's ready to fetch config from backend if
+needed)
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+### UI Library
 
-## Running unit tests
+Not much to talk about, I've just used PrimeNG because it seemed to look good out of the box and since the task was
+time limited I didn't want to worry much about styling it on my own, instead I've just used ready components. 
+I was also considering using Angular Material. Commercially I work with internal libraries which are quite similar
+to each other so using anything new isn't a dealbreaker for me
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+### Aliases
 
-```bash
-ng test
-```
+TypeScript provides very handy way to make import looks good, I know it wasn't probably part of the task but
+I've created aliases for shared, features, services directories' path at tsconfig.json - it just looks better
+and it's more clear for new joiners to the team if the project gets bigger later on = )
 
-## Running end-to-end tests
+### What I'd do if I'd have more time?
 
-For end-to-end (e2e) testing, run:
+I'd definitely add unit tests, as you can see there are files for them but I lacked time to do so, unit tests
+are really important especially when working with public APIs where things might change over time, in this
+scenario unit tests could give you a clean look of what went wrong. (Could be added to Husky)
 
-```bash
-ng e2e
-```
+Adding service for notifications to use them whenever any error shows up (cover the error handling blocks of code
+at services - catch)
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Adding service to handle language changes.
 
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Use any commiting convention, for now it was quite raw on main branch.
