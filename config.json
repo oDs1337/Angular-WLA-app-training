@@ -1,0 +1,10 @@
+{
+  "appName": "Eliq App",
+  "companyName": "Eliq",
+  "logoUrl": "https://eliq.com/wp-content/uploads/2022/04/eliq-monocolor-logo-1.png",
+  "defaultTheme": "light",
+  "themes": ["light", "dark"],
+  "accessibilitySupport": true,
+  "defaultLanguage": "GB",
+  "multipleLanguagesSupport": true
+}
