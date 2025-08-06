@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AppConfig } from '../shared/interfaces/AppConfig';
+import { AppConfig } from '@shared/interfaces/AppConfig';
 import appConfigJson from '../../../config.json' assert { type: 'json' };
 import { Observable, of } from 'rxjs';
 
