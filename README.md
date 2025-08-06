@@ -1,16 +1,59 @@
-# Eliq-drinks-app
-Your home assignment is to write a simple drinks app. It has two main screens. The first screen should show the list of drinks with the image and name of the drink. You can fetch the data from: https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic
+# EliqDrinksAppBaseTobiasz
 
-The second screen is a ‘details’ page explaining the drink recipe. It includes: An image with name, ingredients and list of instructions in different languages which the API supports. You can fetch the data from: https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i={The-id-of-drink}
+This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.4.
 
-**Note**: Develop this project in WLA (White-Label App) approach. A WLA drinks app which could be branded and configured by a config .json file. Think of this config .json object as an instruction which tells the app what/where/how to populate the UI elements. Think like you are developing a WL app template.
+## Development server
 
-# Design and Architecture
-Please use Angular as your project framework. Also feel free to use your favorite open source libraries. Be creative with the design, you are free to decide how to create the UI and UX.
+To start a local development server, run:
 
-# Delivery
-In this fork, delete this content from the current README.md and instead document your project and explain how UI elements can be managed/altered through the Json object - this is also a good way to share thoughts on your design decisions and trade-offs you made.
+```bash
+ng serve
+```
 
-Additionally, deploy the final compiled version of the app to github pages and provide the URL to it.
+Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-Good luck!
+## Code scaffolding
+
+Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+
+```bash
+ng generate component component-name
+```
+
+For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+
+```bash
+ng generate --help
+```
+
+## Building
+
+To build the project run:
+
+```bash
+ng build
+```
+
+This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+
+## Running unit tests
+
+To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+
+```bash
+ng test
+```
+
+## Running end-to-end tests
+
+For end-to-end (e2e) testing, run:
+
+```bash
+ng e2e
+```
+
+Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+
+## Additional Resources
+
+For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
