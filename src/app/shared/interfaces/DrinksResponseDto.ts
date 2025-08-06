@@ -1,7 +1,7 @@
 export interface DrinkDto {
   idDrink: string;
   strDrink: string;
-  strDrnkThumb: string;
+  strDrinkThumb: string;
 }
 
 export interface DrinksResponseDto {

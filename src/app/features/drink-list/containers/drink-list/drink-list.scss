@@ -1,0 +1,15 @@
+:host{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: 100%;
+  gap: 2rem;
+}
+
+.progress-spinner{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40rem;
+}

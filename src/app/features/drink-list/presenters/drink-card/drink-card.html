@@ -1,1 +1,18 @@
-<p>drink-card works!</p>
+<p-card class="card">
+  <ng-template #header>
+    <img alt="Drink image" [src]="drink().strDrinkThumb" />
+  </ng-template>
+  <ng-template #subtitle>
+    <p>
+      Drink's unique number: {{ drink().idDrink }}
+    </p>
+  </ng-template>
+  <ng-template #subtitle>
+    <p>
+      {{ drink().strDrink }}
+    </p>
+  </ng-template>
+  <ng-template #footer>
+    <p-button (onClick)="onReadMoreClicked()" label="Read more" severity="secondary" [outlined]="true"></p-button>
+  </ng-template>
+</p-card>
