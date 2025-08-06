@@ -11,7 +11,7 @@ import {
 } from '@angular/router';
 
 import { routes } from './app.routes';
-import { ConfigService } from '@services/config-service';
+import { ConfigService } from '@services/config-service/config-service';
 import { firstValueFrom } from 'rxjs';
 import { provideHttpClient } from '@angular/common/http';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';

@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { ConfigService } from '@services/config-service';
+import { ConfigService } from '@services/config-service/config-service';
 import { ToolbarModule } from 'primeng/toolbar';
 import { ButtonModule } from 'primeng/button';
 import { LanguageDropdown } from '@shared/components/language-dropdown/language-dropdown';

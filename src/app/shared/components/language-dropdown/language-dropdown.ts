@@ -1,5 +1,5 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { ConfigService } from '@services/config-service';
+import { ConfigService } from '@services/config-service/config-service';
 import { country } from '@shared/types/country';
 import { SelectModule } from 'primeng/select';
 import { FormsModule } from '@angular/forms';
