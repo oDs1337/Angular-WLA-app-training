@@ -1,0 +1,23 @@
+<div class="details-card">
+  <img [src]="drink().strDrinkThumb">
+  <div class="details-card__info">
+    <h1>{{ drink().strDrink }}</h1>
+    <h2>{{ drink().strAlcoholic }} {{ drink().strCategory  }}</h2>
+    <h3>Glass: {{ drink().strGlass }}</h3>
+    <span>Instructions: {{ drink().strInstructions}}</span>
+  </div>
+  <p-table [value]="ingredientPairs()" class="details-card__ingredients">
+    <ng-template #header>
+      <tr>
+        <th>Ingredient</th>
+        <th>Measure</th>
+      </tr>
+    </ng-template>
+    <ng-template #body let-item>
+      <tr>
+        <td>{{ item[0] }}</td>
+        <td>{{ item[1] }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

@@ -1,0 +1,37 @@
+.details-card{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  height: 400px;
+  width: 70vw;
+  border-radius: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background-color: white;
+
+  img{
+    max-height: 400px;
+    border-radius: 2rem 0 0 2rem;
+  }
+
+  &__info{
+    width: 30vw;
+  }
+
+  &__ingredients{
+    display: flex;
+    flex-direction: column;
+    width: 30vw;
+    padding: 2rem;
+  }
+  @media (max-width: 1130px) {
+    flex-direction: column;
+    width: 400px;
+    height: 100%;
+
+    img{
+      border-radius: 2rem 2rem 0 0;
+    }
+
+  }
+}

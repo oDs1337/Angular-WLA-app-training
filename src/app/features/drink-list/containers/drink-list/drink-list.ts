@@ -9,6 +9,7 @@ import { DrinksApiService } from '@services/drinks-api-service/drinks-api-servic
 import { DrinkDto } from '@shared/interfaces/DrinksResponseDto';
 import { ProgressSpinner } from 'primeng/progressspinner';
 import { DrinkCard } from '@features/drink-list/presenters/drink-card/drink-card';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-drink-list',
@@ -17,6 +18,7 @@ import { DrinkCard } from '@features/drink-list/presenters/drink-card/drink-card
   styleUrl: './drink-list.scss',
 })
 export class DrinkList implements OnInit {
+  private router: Router = inject(Router);
   private drinksApiService: DrinksApiService = inject(DrinksApiService);
   protected drinks: WritableSignal<DrinkDto[]> = signal([]);
 
@@ -31,6 +33,6 @@ export class DrinkList implements OnInit {
   }
 
   protected onReadMoreClicked(drink: DrinkDto): void {
-    //todo add router to drink details
+    this.router.navigate(['/drink-details', drink.idDrink]);
   }
 }

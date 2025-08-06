@@ -5,6 +5,10 @@ import {
   DrinkDto,
   DrinksResponseDto,
 } from '@shared/interfaces/DrinksResponseDto';
+import {
+  DrinkDetailsDto,
+  DrinkDetailsResponseDto,
+} from '@shared/interfaces/DrinkDetailsResponseDto';
 
 @Injectable({
   providedIn: 'root',
@@ -23,6 +27,20 @@ export class DrinksApiService {
         catchError((err) => {
           console.error('unable to fetch drinks list from api', err);
           return of([] as DrinkDto[]);
+        }),
+      );
+  }
+
+  public getDrinkDetails(id: string): Observable<DrinkDetailsDto> {
+    return this.http
+      .get<DrinkDetailsResponseDto>(
+        `${this.apiUrl}/api/json/v1/1/lookup.php?i=${id}`,
+      )
+      .pipe(
+        map(({ drinks: [detail] }: DrinkDetailsResponseDto) => detail),
+        catchError((err) => {
+          console.error('unable to fetch details data from api', err);
+          return of({} as DrinkDetailsDto);
         }),
       );
   }
