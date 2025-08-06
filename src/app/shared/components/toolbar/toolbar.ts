@@ -1,9 +1,12 @@
 import { Component, inject } from '@angular/core';
 import { ConfigService } from '@services/config-service';
+import { ToolbarModule } from 'primeng/toolbar';
+import { ButtonModule } from 'primeng/button';
+import { LanguageDropdown } from '@shared/components/language-dropdown/language-dropdown';
 
 @Component({
   selector: 'app-toolbar',
-  imports: [],
+  imports: [ToolbarModule, ButtonModule, LanguageDropdown],
   templateUrl: './toolbar.html',
   styleUrl: './toolbar.scss',
 })

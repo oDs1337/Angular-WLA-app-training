@@ -1,0 +1,24 @@
+<p-select class="dropdown" [options]="countries" [(ngModel)]="selectedCountry">
+  <ng-template #selectedItem let-selectedOption>
+    <div class="dropdown__item">
+      <img
+        [src]="'https://flagsapi.com/' + selectedOption.code + '/flat/24.png'"
+        alt="Country flag"
+      />
+      <div>
+        {{ selectedOption.name }}
+      </div>
+    </div>
+  </ng-template>
+  <ng-template #item let-country>
+    <div class="dropdown__item">
+      <img
+        [src]="'https://flagsapi.com/' + country.code + '/flat/24.png'"
+        alt="Country flag"
+      />
+      <div>
+        {{ country.name }}
+      </div>
+    </div>
+  </ng-template>
+</p-select>

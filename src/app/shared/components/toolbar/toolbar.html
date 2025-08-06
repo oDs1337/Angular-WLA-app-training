@@ -1,1 +1,13 @@
-<p>toolbar works!</p>
+<p-toolbar class="toolbar">
+  <ng-template #start>
+    <div class="toolbar__logo">
+      <img [src]="logoUrl" [alt]="companyName" class="toolbar__logo-img"/>
+    </div>
+    <div class="toolbar__navigation">
+<!--      TODO add router link button to drink list-->
+    </div>
+  </ng-template>
+  <ng-template #end>
+    <app-language-dropdown></app-language-dropdown>
+  </ng-template>
+</p-toolbar>

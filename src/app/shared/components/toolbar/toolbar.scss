@@ -1,0 +1,18 @@
+.toolbar{
+  height: 80px;
+  display: flex;
+  gap: 2rem;
+  background-color: #803CE6;
+  border-color: #803CE6;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+  &__logo-img{
+    height: 40px;
+    margin-left: 2rem;
+  }
+
+  &__navigation{
+    margin-left: 4rem;
+  }
+
+}
